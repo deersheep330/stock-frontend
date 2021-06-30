@@ -1,10 +1,38 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
-  <title>Docker nginx</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>stock trends</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
 </head>
-<body>
-  Hello world!
+
+<body style="background-color: #272822;">
+  <h1 class="text-center bd-example" style="color: #A2A39C; font-family: 'Inconsolata';">stock trends</h1>
+  <div class="d-flex flex-row bd-highlight mb-3">
+    <div class="p-2 flex-fill bd-highlight text-center" style="color: #A2A39C; font-family: 'Inconsolata';">
+      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp ptt &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div>
+    <div class="p-2 flex-fill bd-highlight text-center" style="color: #A2A39C; font-family: 'Inconsolata';">
+      &nbsp&nbsp&nbsp reunion &nbsp&nbsp&nbsp</div>
+    <div class="p-2 flex-fill bd-highlight text-center" style="color: #A2A39C; font-family: 'Inconsolata';">
+      overbought/oversold</div>
+  </div>
+
+  <div id="container"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/series-label.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
