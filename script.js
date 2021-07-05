@@ -52,6 +52,64 @@ Highcharts.theme = {
 // Apply the theme
 Highcharts.setOptions(Highcharts.theme);
 
+window.onload = () => {
+
+  console.log('onload!')
+
+  plot('container-1', 
+       mockData[0].symbol + ' - ' + mockData[0].name,
+       mockData[0].dates,
+       [{
+          name: 'prices',
+          data: mockData[0].prices   
+       }, {
+          name: 'popularities',
+          data: mockData[0].popularities
+       }])
+
+  document.getElementById("ptt-tab").onclick = () => {
+    console.log('ptt clicked!')
+  }
+
+  document.getElementById("reunion-tab").onclick = () => {
+    console.log('reunion clicked!')
+  }
+
+  document.getElementById("ins-buy-tab").onclick = () => {
+    console.log('ins buy clicked!')
+  }
+
+  document.getElementById("ins-sell-tab").onclick = () => {
+    console.log('ins sell clicked!')
+  }
+
+}
+
+var plot = (_target, _title, _xAxis, _series) => {
+
+  Highcharts.chart(_target, {
+
+    title: {
+      text: _title
+    },
+
+    xAxis: {
+      categories: _xAxis
+    },
+  
+    yAxis: [{
+      title: { text: _series[0].name }
+    }, {
+      title: { text: _series[1].name },
+      opposite: true
+    }],
+  
+    series: _series
+  
+  })
+
+}
+
 
 Highcharts.chart('container-1', {
 
@@ -212,3 +270,33 @@ Highcharts.chart('container-4', {
   }],
 
 });
+
+mockData = [{
+	"symbol": "2603",
+	"name": "長榮",
+	"dates": ["2021/06/20", "2021/06/21", "2021/06/22", "2021/06/23", "2021/06/24", "2021/06/25", "2021/06/26", "2021/06/27", "2021/06/28", "2021/06/29", "2021/06/30", "2021/07/01", "2021/07/02", "2021/07/03"],
+	"popularities": [21, 33, 50, 99, 34, 56, 70, 89, 34, 33, 233, 600, 45, 198],
+	"prices": [36, 35, 4, 22, 34, 78, 50, 99, 102, 343, 34, 21, 121, 356],
+	"total_popularity": 198
+}, {
+	"symbol": "2609",
+	"name": "陽明",
+	"dates": ["2021/06/20", "2021/06/21", "2021/06/22", "2021/06/23", "2021/06/24", "2021/06/25", "2021/06/26", "2021/06/27", "2021/06/28", "2021/06/29", "2021/06/30", "2021/07/01", "2021/07/02", "2021/07/03"],
+	"popularities": [21, 33, 50, 99, 34, 56, 70, 89, 34, 33, 233, 600, 45, 198],
+	"prices": [34, 35, 34, 22, 34, 78, 50, 99, 102, 343, 34, 21, 121, 356],
+	"total_popularity": 95
+}, {
+	"symbol": "2615",
+	"name": "萬海",
+	"dates": ["2021/06/20", "2021/06/21", "2021/06/22", "2021/06/23", "2021/06/24", "2021/06/25", "2021/06/26", "2021/06/27", "2021/06/28", "2021/06/29", "2021/06/30", "2021/07/01", "2021/07/02", "2021/07/03"],
+	"popularities": [21, 33, 50, 99, 34, 56, 70, 89, 34, 33, 233, 600, 45, 198],
+	"prices": [34, 35, 34, 22, 34, 78, 50, 99, 102, 343, 34, 21, 121, 356],
+	"total_popularity": 70
+}, {
+	"symbol": "3481",
+	"name": "群創",
+	"dates": ["2021/06/20", "2021/06/21", "2021/06/22", "2021/06/23", "2021/06/24", "2021/06/25", "2021/06/26", "2021/06/27", "2021/06/28", "2021/06/29", "2021/06/30", "2021/07/01", "2021/07/02", "2021/07/03"],
+	"popularities": [2, 3, 5, 9, 3, 5, 7, 8, 3, 3, 23, 60, 4, 19],
+	"prices": [34, 35, 34, 22, 34, 78, 50, 99, 102, 343, 34, 21, 121, 35],
+	"total_popularity": 46
+}]
