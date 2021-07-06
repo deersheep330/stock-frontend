@@ -1,277 +1,60 @@
-Highcharts.theme = {
-  "colors": ["#F92672", "#66D9EF", "#A6E22E", "#A6E22E"],
-  "chart": {
-    "backgroundColor": "#272822",
-    "style": {
-      "fontFamily": "Inconsolata",
-      "color": "#A2A39C"
+var initHighCharts = () => {
+  Highcharts.theme = {
+    colors: ["#F92672", "#66D9EF", "#A6E22E", "#A6E22E"],
+    chart: {
+      backgroundColor: "#272822",
+      style: {
+        fontFamily: "Inconsolata",
+        color: "#A2A39C"
+      },
+      height: "50%"
     },
-    "height": "50%"
-  },
-  "title": {
-    "style": {
-      "color": "#A2A39C"
-    },
-    "align": "left"
-  },
-  "subtitle": {
-    "style": {
-      "color": "#A2A39C"
-    },
-    "align": "left"
-  },
-  "legend": {
-    "align": "center",
-    "verticalAlign": "bottom",
-    "itemStyle": {
-      "fontWeight": "normal",
-      "color": "#A2A39C"
-    }
-  },
-  "xAxis": {
-    "gridLineDashStyle": "Dot",
-    "gridLineWidth": 1,
-    "gridLineColor": "#A2A39C",
-    "lineColor": "#A2A39C",
-    "minorGridLineColor": "#A2A39C",
-    "tickColor": "#A2A39C",
-    "tickWidth": 1
-  },
-  "yAxis": {
-    "gridLineDashStyle": "Dot",
-    "gridLineColor": "#A2A39C",
-    "lineColor": "#A2A39C",
-    "minorGridLineColor": "#A2A39C",
-    "tickColor": "#A2A39C",
-    "tickWidth": 1
-  },
-  "credits": {
-    "enabled": false
-  }
-};
-// Apply the theme
-Highcharts.setOptions(Highcharts.theme);
-
-window.onload = () => {
-
-  console.log('onload!')
-
-  plot('container-1', 
-       mockData[0].symbol + ' - ' + mockData[0].name,
-       mockData[0].dates,
-       [{
-          name: 'prices',
-          data: mockData[0].prices   
-       }, {
-          name: 'popularities',
-          data: mockData[0].popularities
-       }])
-
-  document.getElementById("ptt-tab").onclick = () => {
-    console.log('ptt clicked!')
-  }
-
-  document.getElementById("reunion-tab").onclick = () => {
-    console.log('reunion clicked!')
-  }
-
-  document.getElementById("ins-buy-tab").onclick = () => {
-    console.log('ins buy clicked!')
-  }
-
-  document.getElementById("ins-sell-tab").onclick = () => {
-    console.log('ins sell clicked!')
-  }
-
-}
-
-var plot = (_target, _title, _xAxis, _series) => {
-
-  Highcharts.chart(_target, {
-
     title: {
-      text: _title
+      style: {
+        color: "#A2A39C"
+      },
+      align: "left"
     },
-
+    subtitle: {
+      style: {
+        color: "#A2A39C"
+      },
+      align: "left"
+    },
+    legend: {
+      align: "center",
+      verticalAlign: "bottom",
+      itemStyle: {
+        fontWeight: "normal",
+        color: "#A2A39C"
+      }
+    },
     xAxis: {
-      categories: _xAxis
+      gridLineDashStyle: "Dot",
+      gridLineWidth: 1,
+      gridLineColor: "#A2A39C",
+      lineColor: "#A2A39C",
+      minorGridLineColor: "#A2A39C",
+      tickColor: "#A2A39C",
+      tickWidth: 1
     },
-  
-    yAxis: [{
-      title: { text: _series[0].name }
-    }, {
-      title: { text: _series[1].name },
-      opposite: true
-    }],
-  
-    series: _series
-  
-  })
+    yAxis: {
+      gridLineDashStyle: "Dot",
+      gridLineColor: "#A2A39C",
+      lineColor: "#A2A39C",
+      minorGridLineColor: "#A2A39C",
+      tickColor: "#A2A39C",
+      tickWidth: 1
+    },
+    credits: {
+      enabled: false
+    }
+  }
 
+  Highcharts.setOptions(Highcharts.theme)
 }
 
-
-Highcharts.chart('container-1', {
-
-  title: {
-    text: 'Solar Employment Growth by Sector, 2010-2016'
-  },
-
-  yAxis: {
-    title: {
-      text: 'Number of Employees'
-    }
-  },
-
-  plotOptions: {
-    series: {
-      label: {
-        connectorAllowed: false
-      },
-      pointStart: 2010
-    }
-  },
-
-  series: [{
-    name: 'Installation',
-    data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
-  }, {
-    name: 'Manufacturing',
-    data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
-  }, {
-    name: 'Sales & Distribution',
-    data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
-  }, {
-    name: 'Project Development',
-    data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
-  }, {
-    name: 'Other',
-    data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]
-  }],
-
-});
-
-Highcharts.chart('container-2', {
-
-  title: {
-    text: 'Solar Employment Growth by Sector, 2010-2016'
-  },
-
-  yAxis: {
-    title: {
-      text: 'Number of Employees'
-    }
-  },
-
-  plotOptions: {
-    series: {
-      label: {
-        connectorAllowed: false
-      },
-      pointStart: 2010
-    }
-  },
-
-  series: [{
-    name: 'Installation',
-    data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
-  }, {
-    name: 'Manufacturing',
-    data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
-  }, {
-    name: 'Sales & Distribution',
-    data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
-  }, {
-    name: 'Project Development',
-    data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
-  }, {
-    name: 'Other',
-    data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]
-  }],
-
-});
-
-Highcharts.chart('container-3', {
-
-  title: {
-    text: 'Solar Employment Growth by Sector, 2010-2016'
-  },
-
-  yAxis: {
-    title: {
-      text: 'Number of Employees'
-    }
-  },
-
-  plotOptions: {
-    series: {
-      label: {
-        connectorAllowed: false
-      },
-      pointStart: 2010
-    }
-  },
-
-  series: [{
-    name: 'Installation',
-    data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
-  }, {
-    name: 'Manufacturing',
-    data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
-  }, {
-    name: 'Sales & Distribution',
-    data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
-  }, {
-    name: 'Project Development',
-    data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
-  }, {
-    name: 'Other',
-    data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]
-  }],
-
-});
-
-Highcharts.chart('container-4', {
-
-  title: {
-    text: 'Solar Employment Growth by Sector, 2010-2016'
-  },
-
-  yAxis: {
-    title: {
-      text: 'Number of Employees'
-    }
-  },
-
-  plotOptions: {
-    series: {
-      label: {
-        connectorAllowed: false
-      },
-      pointStart: 2010
-    }
-  },
-
-  series: [{
-    name: 'Installation',
-    data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
-  }, {
-    name: 'Manufacturing',
-    data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
-  }, {
-    name: 'Sales & Distribution',
-    data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
-  }, {
-    name: 'Project Development',
-    data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
-  }, {
-    name: 'Other',
-    data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]
-  }],
-
-});
-
-mockData = [{
+var mockData = [{
 	"symbol": "2603",
 	"name": "長榮",
 	"dates": ["2021/06/20", "2021/06/21", "2021/06/22", "2021/06/23", "2021/06/24", "2021/06/25", "2021/06/26", "2021/06/27", "2021/06/28", "2021/06/29", "2021/06/30", "2021/07/01", "2021/07/02", "2021/07/03"],
@@ -300,3 +83,103 @@ mockData = [{
 	"prices": [34, 35, 34, 22, 34, 78, 50, 99, 102, 343, 34, 21, 121, 35],
 	"total_popularity": 46
 }]
+
+var data = []
+
+var loadData = (type) => {
+  data = []
+  // call api on type
+  console.log('type = ' + type)
+}
+
+var _plot = (_target, _title, _xAxis, _series) => {
+
+  Highcharts.chart(_target, {
+
+    title: {
+      text: _title
+    },
+
+    xAxis: {
+      categories: _xAxis
+    },
+  
+    yAxis: [{
+      title: { text: _series[0].name }
+    }, {
+      title: { text: _series[1].name },
+      opposite: true
+    }],
+  
+    series: _series
+  
+  })
+
+}
+
+var loadCharts = () => {
+  for (var i = 0; i < data.length; i++) {
+
+    var target = 'container-' + (i + 1)
+    var title = data[i].symbol + ' - ' + data[i].name
+    var dates = data[i].dates
+    var series = [
+      { name: 'prices', data: data[0].prices },
+      { name: 'popularities', data: data[0].popularities }
+    ]
+
+    _plot(target, title, dates, series)
+
+  }
+}
+
+var loadPtt = () => {
+  loadData('ptt')
+  data = mockData
+  loadCharts()
+}
+
+var loadReunion = () => {
+  loadData('reunion')
+  loadCharts()
+}
+
+var loadInsBuy = () => {
+  loadData('ins-buy')
+  loadCharts()
+}
+
+var loadInsSell = () => {
+  loadData('ins-sell')
+  loadCharts()
+}
+
+initHighCharts()
+
+window.onload = () => {
+
+  console.log('onload!')
+
+  loadPtt()
+
+  document.getElementById("ptt-tab").onclick = () => {
+    console.log('ptt clicked!')
+    loadPtt()
+  }
+
+  document.getElementById("reunion-tab").onclick = () => {
+    console.log('reunion clicked!')
+    loadReunion()
+  }
+
+  document.getElementById("ins-buy-tab").onclick = () => {
+    console.log('ins buy clicked!')
+    loadInsBuy()
+  }
+
+  document.getElementById("ins-sell-tab").onclick = () => {
+    console.log('ins sell clicked!')
+    loadInsSell()
+  }
+
+}
