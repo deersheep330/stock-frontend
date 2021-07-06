@@ -1,3 +1,5 @@
+var axios = require('axios').default
+
 var initHighCharts = () => {
   Highcharts.theme = {
     colors: ["#F92672", "#66D9EF", "#A6E22E", "#A6E22E"],
@@ -90,6 +92,8 @@ var loadData = (type) => {
   data = []
   // call api on type
   console.log('type = ' + type)
+  var baseUrl =  'http://127.0.0.1:8000'
+
 }
 
 var _plot = (_target, _title, _xAxis, _series) => {
