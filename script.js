@@ -1,5 +1,3 @@
-var axios = require('axios').default
-
 var initHighCharts = () => {
   Highcharts.theme = {
     colors: ["#F92672", "#66D9EF", "#A6E22E", "#A6E22E"],
@@ -55,7 +53,7 @@ var initHighCharts = () => {
 
   Highcharts.setOptions(Highcharts.theme)
 }
-
+/*
 var mockData = [{
 	"symbol": "2603",
 	"name": "長榮",
@@ -85,20 +83,31 @@ var mockData = [{
 	"prices": [34, 35, 34, 22, 34, 78, 50, 99, 102, 343, 34, 21, 121, 35],
 	"total_popularity": 46
 }]
-
+*/
 var data = []
+var maxPlotSize = 8
+var charts = []
 
-var loadData = (type) => {
+var loadData = async (type) => {
+
   data = []
-  // call api on type
-  console.log('type = ' + type)
   var baseUrl =  'http://127.0.0.1:8000'
+
+  try {
+    const response = await axios.get(baseUrl + '/' + type)
+    console.log('==> get ' + type + ' data')
+    console.log(response.data)
+    data = response.data
+  } 
+  catch (error) {
+    console.error(error)
+  }
 
 }
 
 var _plot = (_target, _title, _xAxis, _series) => {
 
-  Highcharts.chart(_target, {
+  return Highcharts.chart(_target, {
 
     title: {
       text: _title
@@ -121,8 +130,20 @@ var _plot = (_target, _title, _xAxis, _series) => {
 
 }
 
+var clearCharts = () => {
+  for (var i = 0; i < maxPlotSize; i++) {
+    if (charts[i]) {
+      charts[i].destroy()
+      charts[i] = undefined
+    }
+  }
+}
+
 var loadCharts = () => {
-  for (var i = 0; i < data.length; i++) {
+
+  var max = (data.length > maxPlotSize) ? maxPlotSize : data.length
+
+  for (var i = 0; i < max; i++) {
 
     var target = 'container-' + (i + 1)
     var title = data[i].symbol + ' - ' + data[i].name
@@ -132,29 +153,29 @@ var loadCharts = () => {
       { name: 'popularities', data: data[0].popularities }
     ]
 
-    _plot(target, title, dates, series)
+    charts[i] = _plot(target, title, dates, series)
 
   }
 }
 
-var loadPtt = () => {
-  loadData('ptt')
-  data = mockData
+var loadPtt = async () => {
+  await loadData('ptt')
+  //data = mockData
   loadCharts()
 }
 
-var loadReunion = () => {
-  loadData('reunion')
+var loadReunion = async () => {
+  await loadData('reunion')
   loadCharts()
 }
 
-var loadInsBuy = () => {
-  loadData('ins-buy')
+var loadInsBuy = async () => {
+  await loadData('ins-buy')
   loadCharts()
 }
 
-var loadInsSell = () => {
-  loadData('ins-sell')
+var loadInsSell = async () => {
+  await loadData('ins-sell')
   loadCharts()
 }
 
@@ -168,21 +189,25 @@ window.onload = () => {
 
   document.getElementById("ptt-tab").onclick = () => {
     console.log('ptt clicked!')
+    clearCharts()
     loadPtt()
   }
 
   document.getElementById("reunion-tab").onclick = () => {
     console.log('reunion clicked!')
+    clearCharts()
     loadReunion()
   }
 
   document.getElementById("ins-buy-tab").onclick = () => {
     console.log('ins buy clicked!')
+    clearCharts()
     loadInsBuy()
   }
 
   document.getElementById("ins-sell-tab").onclick = () => {
     console.log('ins sell clicked!')
+    clearCharts()
     loadInsSell()
   }
 
