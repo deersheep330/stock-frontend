@@ -44,7 +44,7 @@ workflows:
                 - master
           account-url: AWS_ECR_ACCOUNT_URL
           region: AWS_DEFAULT_REGION
-          repo: 'stock'
+          repo: 'stock-frontend'
           tag: 'latest,${CIRCLE_SHA1}'
       - terraform-deploy:
           requires:
