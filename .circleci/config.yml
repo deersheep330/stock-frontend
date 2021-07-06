@@ -36,8 +36,6 @@ workflows:
   test-and-deploy:
     jobs:
       - aws-ecr/build-and-push-image:
-          requires:
-            - test
           context:
             - AWS_CONFIG
           filters:
