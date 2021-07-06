@@ -91,7 +91,7 @@ var charts = []
 var loadData = async (type) => {
 
   data = []
-  var baseUrl =  'http://127.0.0.1:8000'
+  var baseUrl =  'http://ec2-13-59-61-156.us-east-2.compute.amazonaws.com:8000'
 
   try {
     const response = await axios.get(baseUrl + '/' + type)
