@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
     bucket = "deerpark-terraform-state"
-    key = "stock-service/terraform.tfstate"
+    key = "stock-frontend/terraform.tfstate"
     region = "us-east-2"
   }
 }
