@@ -149,8 +149,8 @@ var loadCharts = () => {
     var title = data[i].symbol + ' - ' + data[i].name
     var dates = data[i].dates
     var series = [
-      { name: 'prices', data: data[0].prices },
-      { name: 'popularities', data: data[0].popularities }
+      { name: 'prices', data: data[i].prices },
+      { name: 'popularities', data: data[i].popularities }
     ]
 
     charts[i] = _plot(target, title, dates, series)
