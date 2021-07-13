@@ -36,7 +36,19 @@ var initHighCharts = () => {
       lineColor: "#A2A39C",
       minorGridLineColor: "#A2A39C",
       tickColor: "#A2A39C",
-      tickWidth: 1
+      tickWidth: 1,
+      labels: {
+        style: {
+           color: '#FFF',
+           font: '11px Trebuchet MS, Verdana, sans-serif'
+        }
+      },
+      title: {
+        style: {
+           color: '#FFF',
+           font: '12px Trebuchet MS, Verdana, sans-serif'
+        }
+      }
     },
     yAxis: {
       gridLineDashStyle: "Dot",
@@ -44,7 +56,19 @@ var initHighCharts = () => {
       lineColor: "#A2A39C",
       minorGridLineColor: "#A2A39C",
       tickColor: "#A2A39C",
-      tickWidth: 1
+      tickWidth: 1,
+      labels: {
+        style: {
+           color: '#FFF',
+           font: '11px Trebuchet MS, Verdana, sans-serif'
+        }
+      },
+      title: {
+        style: {
+           color: '#FFF',
+           font: '12px Trebuchet MS, Verdana, sans-serif'
+        }
+      }
     },
     credits: {
       enabled: false
@@ -150,7 +174,7 @@ var loadCharts = () => {
     var dates = data[i].dates
     var series = [
       { name: 'prices', data: data[i].prices },
-      { name: 'popularities', data: data[i].popularities }
+      { name: 'popularities', data: data[i].popularities, yAxis: 1 }
     ]
 
     charts[i] = _plot(target, title, dates, series)
