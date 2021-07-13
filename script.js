@@ -167,7 +167,7 @@ var _plotSummary = (_target, _title, _xAxis, _series) => {
     },
   
     yAxis: {
-      title: { text: 'popularity' }
+      title: { text: 'popularities' }
     },
   
     series: _series
