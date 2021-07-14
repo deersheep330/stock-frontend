@@ -1,6 +1,6 @@
 var initHighCharts = () => {
   Highcharts.theme = {
-    colors: ["#F92672", "#66D9EF", "#A6E22E", "#A6E22E"],
+    colors: ["#F92672", "#66D9EF", "#A6E22E", "#00FF00", "#AAAAAA", "#FED966", "#7226F9", "#FF00FF"],
     chart: {
       backgroundColor: "#272822",
       style: {
@@ -154,8 +154,30 @@ var _plot = (_target, _title, _xAxis, _series) => {
 
 }
 
+var _plotSummary = (_target, _title, _xAxis, _series) => {
+
+  return Highcharts.chart(_target, {
+
+    title: {
+      text: _title
+    },
+
+    xAxis: {
+      categories: _xAxis
+    },
+  
+    yAxis: {
+      title: { text: 'popularity' }
+    },
+  
+    series: _series
+  
+  })
+
+}
+
 var clearCharts = () => {
-  for (var i = 0; i < maxPlotSize; i++) {
+  for (var i = 0; i < maxPlotSize + 1; i++) {
     if (charts[i]) {
       charts[i].destroy()
       charts[i] = undefined
@@ -166,6 +188,8 @@ var clearCharts = () => {
 var loadCharts = () => {
 
   var max = (data.length > maxPlotSize) ? maxPlotSize : data.length
+
+  var trends = []
 
   for (var i = 0; i < max; i++) {
 
@@ -179,7 +203,12 @@ var loadCharts = () => {
 
     charts[i] = _plot(target, title, dates, series)
 
+    trends[i] = { name: title, data: data[i].popularities }
+
   }
+
+  charts.push(_plotSummary('container-0', 'trends', data[0].dates, trends))
+
 }
 
 var loadPtt = async () => {
