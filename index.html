@@ -13,29 +13,75 @@
   <link href="style.css" rel="stylesheet">
 </head>
 
-<body style="background-color: #272822;">
-  <h1 class="text-center bd-example" style="color: #A2A39C; font-family: 'Inconsolata';">stock trends</h1>
+<body class="bg-class bd-example">
+
+  <h1 class="text-center bd-example header-class">stock trends</h1>
+
   <div class="d-flex flex-row bd-highlight mb-3">
-    <div id="ptt-tab" class="p-2 flex-fill bd-highlight text-center" style="color: #A2A39C; font-family: 'Inconsolata';">
-      ptt</div>
-    <div id="reunion-tab" class="p-2 flex-fill bd-highlight text-center" style="color: #A2A39C; font-family: 'Inconsolata';">
-      reunion</div>
-    <div id="ins-buy-tab" class="p-2 flex-fill bd-highlight text-center" style="color: #A2A39C; font-family: 'Inconsolata';">
-      ins. buy</div>
-    <div id="ins-sell-tab" class="p-2 flex-fill bd-highlight text-center" style="color: #A2A39C; font-family: 'Inconsolata';">
-      ins. sell</div>
+
+    <div id="ptt-tab" class="p-2 flex-fill bd-highlight text-center">
+      <span class="tab-class">ptt</span>
+    </div>
+
+    <div id="reunion-tab" class="p-2 flex-fill bd-highlight text-center">
+      <span class="tab-class">reunion</span>
+    </div>
+
+    <div id="ins-buy-tab" class="p-2 flex-fill bd-highlight text-center tab-class">
+      <span class="tab-class">ins. buy</span>
+    </div>
+
+    <div id="ins-sell-tab" class="p-2 flex-fill bd-highlight text-center tab-class">
+      <span class="tab-class">ins. sell</span>
+    </div>
+
   </div>
 
-  <div id="container-0"></div>
+  <div id="chart-block" class="">
+    <div id="container-0"></div>
 
-  <div id="container-1"></div>
-  <div id="container-2"></div>
-  <div id="container-3"></div>
-  <div id="container-4"></div>
-  <div id="container-5"></div>
-  <div id="container-6"></div>
-  <div id="container-7"></div>
-  <div id="container-8"></div>
+    <div id="container-1"></div>
+    <div id="container-2"></div>
+    <div id="container-3"></div>
+    <div id="container-4"></div>
+    <div id="container-5"></div>
+    <div id="container-6"></div>
+    <div id="container-7"></div>
+    <div id="container-8"></div>
+  </div>
+
+  <div id="table-block" class="table-responsive disabled">
+    <table class="table table-dark table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Handle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
