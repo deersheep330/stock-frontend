@@ -207,7 +207,7 @@ var loadCharts = () => {
 
   }
 
-  charts.push(_plotSummary('container-0', 'trends', data[0].dates, trends))
+  charts[maxPlotSize] = _plotSummary('container-0', 'trends', data[0].dates, trends)
 
 }
 
@@ -242,24 +242,32 @@ window.onload = () => {
 
   document.getElementById("ptt-tab").onclick = () => {
     console.log('ptt clicked!')
+    document.getElementById("table-block").classList.add("disabled")
+    document.getElementById("chart-block").classList.remove("disabled")
     clearCharts()
     loadPtt()
   }
 
   document.getElementById("reunion-tab").onclick = () => {
     console.log('reunion clicked!')
+    document.getElementById("table-block").classList.add("disabled")
+    document.getElementById("chart-block").classList.remove("disabled")
     clearCharts()
     loadReunion()
   }
 
   document.getElementById("ins-buy-tab").onclick = () => {
     console.log('ins buy clicked!')
+    document.getElementById("chart-block").classList.add("disabled")
+    document.getElementById("table-block").classList.remove("disabled")
     clearCharts()
     loadInsBuy()
   }
 
   document.getElementById("ins-sell-tab").onclick = () => {
     console.log('ins sell clicked!')
+    document.getElementById("chart-block").classList.add("disabled")
+    document.getElementById("table-block").classList.remove("disabled")
     clearCharts()
     loadInsSell()
   }

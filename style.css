@@ -6,3 +6,22 @@
   border-top-left-radius: .25rem;
   border-top-right-radius: .25rem;
 }
+
+.bg-class {
+  background-color: #272822;
+}
+
+.header-class {
+  color: #A2A39C;
+  font-family: 'Inconsolata';
+}
+
+.tab-class {
+  color: #A2A39C;
+  font-family: 'Inconsolata';
+  cursor: pointer;
+}
+
+.disabled {
+  display: none;
+}
