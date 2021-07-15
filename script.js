@@ -185,6 +185,15 @@ var clearCharts = () => {
   }
 }
 
+var clearTable = () => {
+  for (var i = 1; i < 8; i++) {
+    document.getElementById('stock-' + i).textContent = ''
+    document.getElementById('day-before-yesterday-' + i).textContent = ''
+    document.getElementById('yesterday-' + i).textContent = ''
+    document.getElementById('today-predict-' + i).textContent = ''
+  }
+}
+
 var loadCharts = () => {
 
   var max = (data.length > maxPlotSize) ? maxPlotSize : data.length
@@ -211,6 +220,28 @@ var loadCharts = () => {
 
 }
 
+var loadTable = () => {
+
+  document.getElementById('day-before-yesterday-header').textContent = data[0]['trends'][0]['date']
+  document.getElementById('yesterday-header').textContent = data[0]['trends'][1]['date']
+  if (data[0]['trends'][2]) { 
+    document.getElementById('today-predict-header').textContent = data[0]['trends'][2]['date']
+  }
+
+  for (var i = 1; i <= data.length; i++) {
+
+    document.getElementById('stock-' + i).textContent = data[i - 1]['symbol'] + ' - ' + data[i - 1]['name']
+
+    document.getElementById('day-before-yesterday-' + i).textContent = data[i - 1]['trends'][0]['quantity']
+    document.getElementById('yesterday-' + i).textContent = data[i - 1]['trends'][1]['quantity']
+    if (data[i - 1]['trends'][2]) {
+      document.getElementById('today-predict-' + i).textContent = data[i - 1]['trends'][2]['quantity']
+    }
+    
+  }
+
+}
+
 var loadPtt = async () => {
   await loadData('ptt')
   //data = mockData
@@ -224,12 +255,12 @@ var loadReunion = async () => {
 
 var loadInsBuy = async () => {
   await loadData('ins-buy')
-  loadCharts()
+  loadTable()
 }
 
 var loadInsSell = async () => {
   await loadData('ins-sell')
-  loadCharts()
+  loadTable()
 }
 
 initHighCharts()
@@ -245,6 +276,7 @@ window.onload = () => {
     document.getElementById("table-block").classList.add("disabled")
     document.getElementById("chart-block").classList.remove("disabled")
     clearCharts()
+    clearTable()
     loadPtt()
   }
 
@@ -253,6 +285,7 @@ window.onload = () => {
     document.getElementById("table-block").classList.add("disabled")
     document.getElementById("chart-block").classList.remove("disabled")
     clearCharts()
+    clearTable()
     loadReunion()
   }
 
@@ -261,6 +294,7 @@ window.onload = () => {
     document.getElementById("chart-block").classList.add("disabled")
     document.getElementById("table-block").classList.remove("disabled")
     clearCharts()
+    clearTable()
     loadInsBuy()
   }
 
@@ -269,6 +303,7 @@ window.onload = () => {
     document.getElementById("chart-block").classList.add("disabled")
     document.getElementById("table-block").classList.remove("disabled")
     clearCharts()
+    clearTable()
     loadInsSell()
   }
 
