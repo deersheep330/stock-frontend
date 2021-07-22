@@ -39,14 +39,14 @@ var initHighCharts = () => {
       tickWidth: 1,
       labels: {
         style: {
-           color: '#FFF',
-           font: '11px Trebuchet MS, Verdana, sans-serif'
+          color: '#FFF',
+          font: '11px Trebuchet MS, Verdana, sans-serif'
         }
       },
       title: {
         style: {
-           color: '#FFF',
-           font: '12px Trebuchet MS, Verdana, sans-serif'
+          color: '#FFF',
+          font: '12px Trebuchet MS, Verdana, sans-serif'
         }
       }
     },
@@ -59,14 +59,14 @@ var initHighCharts = () => {
       tickWidth: 1,
       labels: {
         style: {
-           color: '#FFF',
-           font: '11px Trebuchet MS, Verdana, sans-serif'
+          color: '#FFF',
+          font: '11px Trebuchet MS, Verdana, sans-serif'
         }
       },
       title: {
         style: {
-           color: '#FFF',
-           font: '12px Trebuchet MS, Verdana, sans-serif'
+          color: '#FFF',
+          font: '12px Trebuchet MS, Verdana, sans-serif'
         }
       }
     },
@@ -79,33 +79,53 @@ var initHighCharts = () => {
 }
 /*
 var mockData = [{
-	"symbol": "2603",
-	"name": "長榮",
-	"dates": ["2021/06/20", "2021/06/21", "2021/06/22", "2021/06/23", "2021/06/24", "2021/06/25", "2021/06/26", "2021/06/27", "2021/06/28", "2021/06/29", "2021/06/30", "2021/07/01", "2021/07/02", "2021/07/03"],
-	"popularities": [21, 33, 50, 99, 34, 56, 70, 89, 34, 33, 233, 600, 45, 198],
-	"prices": [36, 35, 4, 22, 34, 78, 50, 99, 102, 343, 34, 21, 121, 356],
-	"total_popularity": 198
+  "symbol": "2603",
+  "name": "長榮",
+  "dates": ["2021/06/20", "2021/06/21", "2021/06/22", "2021/06/23", "2021/06/24", "2021/06/25", "2021/06/26", "2021/06/27", "2021/06/28", "2021/06/29", "2021/06/30", "2021/07/01", "2021/07/02", "2021/07/03"],
+  "popularities": [21, 33, 50, 99, 34, 56, 70, 89, 34, 33, 233, 600, 45, 198],
+  "prices": [36, 35, 4, 22, 34, 78, 50, 99, 102, 343, 34, 21, 121, 356],
+  "total_popularity": 198
 }, {
-	"symbol": "2609",
-	"name": "陽明",
-	"dates": ["2021/06/20", "2021/06/21", "2021/06/22", "2021/06/23", "2021/06/24", "2021/06/25", "2021/06/26", "2021/06/27", "2021/06/28", "2021/06/29", "2021/06/30", "2021/07/01", "2021/07/02", "2021/07/03"],
-	"popularities": [21, 33, 50, 99, 34, 56, 70, 89, 34, 33, 233, 600, 45, 198],
-	"prices": [34, 35, 34, 22, 34, 78, 50, 99, 102, 343, 34, 21, 121, 356],
-	"total_popularity": 95
+  "symbol": "2609",
+  "name": "陽明",
+  "dates": ["2021/06/20", "2021/06/21", "2021/06/22", "2021/06/23", "2021/06/24", "2021/06/25", "2021/06/26", "2021/06/27", "2021/06/28", "2021/06/29", "2021/06/30", "2021/07/01", "2021/07/02", "2021/07/03"],
+  "popularities": [21, 33, 50, 99, 34, 56, 70, 89, 34, 33, 233, 600, 45, 198],
+  "prices": [34, 35, 34, 22, 34, 78, 50, 99, 102, 343, 34, 21, 121, 356],
+  "total_popularity": 95
 }, {
-	"symbol": "2615",
-	"name": "萬海",
-	"dates": ["2021/06/20", "2021/06/21", "2021/06/22", "2021/06/23", "2021/06/24", "2021/06/25", "2021/06/26", "2021/06/27", "2021/06/28", "2021/06/29", "2021/06/30", "2021/07/01", "2021/07/02", "2021/07/03"],
-	"popularities": [21, 33, 50, 99, 34, 56, 70, 89, 34, 33, 233, 600, 45, 198],
-	"prices": [34, 35, 34, 22, 34, 78, 50, 99, 102, 343, 34, 21, 121, 356],
-	"total_popularity": 70
+  "symbol": "2615",
+  "name": "萬海",
+  "dates": ["2021/06/20", "2021/06/21", "2021/06/22", "2021/06/23", "2021/06/24", "2021/06/25", "2021/06/26", "2021/06/27", "2021/06/28", "2021/06/29", "2021/06/30", "2021/07/01", "2021/07/02", "2021/07/03"],
+  "popularities": [21, 33, 50, 99, 34, 56, 70, 89, 34, 33, 233, 600, 45, 198],
+  "prices": [34, 35, 34, 22, 34, 78, 50, 99, 102, 343, 34, 21, 121, 356],
+  "total_popularity": 70
 }, {
-	"symbol": "3481",
-	"name": "群創",
-	"dates": ["2021/06/20", "2021/06/21", "2021/06/22", "2021/06/23", "2021/06/24", "2021/06/25", "2021/06/26", "2021/06/27", "2021/06/28", "2021/06/29", "2021/06/30", "2021/07/01", "2021/07/02", "2021/07/03"],
-	"popularities": [2, 3, 5, 9, 3, 5, 7, 8, 3, 3, 23, 60, 4, 19],
-	"prices": [34, 35, 34, 22, 34, 78, 50, 99, 102, 343, 34, 21, 121, 35],
-	"total_popularity": 46
+  "symbol": "3481",
+  "name": "群創",
+  "dates": ["2021/06/20", "2021/06/21", "2021/06/22", "2021/06/23", "2021/06/24", "2021/06/25", "2021/06/26", "2021/06/27", "2021/06/28", "2021/06/29", "2021/06/30", "2021/07/01", "2021/07/02", "2021/07/03"],
+  "popularities": [2, 3, 5, 9, 3, 5, 7, 8, 3, 3, 23, 60, 4, 19],
+  "prices": [34, 35, 34, 22, 34, 78, 50, 99, 102, 343, 34, 21, 121, 35],
+  "total_popularity": 46
+}]
+*/
+/*
+var mockData = [{
+  "symbol": "2303",
+  "name": "聯電",
+  "trends": [{
+    "date": "2021-07-21",
+    "quantity": 9999,
+    "price": 654.0,
+    "change": 434.0,
+    "percentage": 3.0
+  }, {
+    "date": "2021-07-22",
+    "quantity": 101840,
+    "price": 2313.0,
+    "change": 33.0,
+    "percentage": -323.0
+  }],
+  "total_trends": 111839
 }]
 */
 var data = []
@@ -123,7 +143,7 @@ var loadData = async (type) => {
     console.log('==> get ' + type + ' data')
     console.log(response.data)
     data = response.data
-  } 
+  }
   catch (error) {
     console.error(error)
   }
@@ -141,16 +161,16 @@ var _plot = (_target, _title, _xAxis, _series) => {
     xAxis: {
       categories: _xAxis
     },
-  
+
     yAxis: [{
       title: { text: _series[0].name }
     }, {
       title: { text: _series[1].name },
       opposite: true
     }],
-  
+
     series: _series
-  
+
   })
 
 }
@@ -166,13 +186,13 @@ var _plotSummary = (_target, _title, _xAxis, _series) => {
     xAxis: {
       categories: _xAxis
     },
-  
+
     yAxis: {
       title: { text: 'popularities' }
     },
-  
+
     series: _series
-  
+
   })
 
 }
@@ -225,7 +245,7 @@ var loadTable = () => {
 
   document.getElementById('day-before-yesterday-header').textContent = data[0]['trends'][0]['date']
   document.getElementById('yesterday-header').textContent = data[0]['trends'][1]['date']
-  if (data[0]['trends'][2]) { 
+  if (data[0]['trends'][2]) {
     document.getElementById('today-predict-header').textContent = data[0]['trends'][2]['date']
   }
 
@@ -233,12 +253,28 @@ var loadTable = () => {
 
     document.getElementById('stock-' + i).textContent = data[i - 1]['symbol'] + ' - ' + data[i - 1]['name']
 
-    document.getElementById('day-before-yesterday-' + i).textContent = data[i - 1]['trends'][0]['quantity']
-    document.getElementById('yesterday-' + i).textContent = data[i - 1]['trends'][1]['quantity']
-    if (data[i - 1]['trends'][2]) {
-      document.getElementById('today-predict-' + i).textContent = data[i - 1]['trends'][2]['quantity']
+    var trends = data[i - 1]['trends']
+
+    var quantity = trends[0]['quantity']
+    var price = trends[0]['price']
+    var change = trends[0]['change'] >= 0 ? '+' + trends[0]['change'] : trends[0]['change']
+    var percentage = trends[0]['percentage'] >= 0 ? '+' + trends[0]['percentage'] + '%' : trends[0]['percentage'] + '%'
+    document.getElementById('day-before-yesterday-' + i).textContent = quantity + ' | ' + price + ' | ' + change + ' (' + percentage + ')'
+
+    quantity = trends[1]['quantity']
+    price = trends[1]['price']
+    change = trends[1]['change'] >= 0 ? '+' + trends[1]['change'] : trends[1]['change']
+    percentage = trends[1]['percentage'] >= 0 ? '+' + trends[1]['percentage'] + '%' : trends[1]['percentage'] + '%'
+    document.getElementById('yesterday-' + i).textContent = quantity + ' | ' + price + ' | ' + change + ' (' + percentage + ')'
+
+    if (trends[2]) {
+      quantity = trends[2]['quantity']
+      price = trends[2]['price']
+      change = trends[2]['change'] >= 0 ? '+' + trends[2]['change'] : trends[21]['change']
+      percentage = trends[2]['percentage'] >= 0 ? '+' + trends[2]['percentage'] + '%' : trends[2]['percentage'] + '%'
+      document.getElementById('today-predict-' + i).textContent = quantity + ' | ' + price + ' | ' + change + ' (' + percentage + ')'
     }
-    
+
   }
 
 }
@@ -256,6 +292,7 @@ var loadReunion = async () => {
 
 var loadInsBuy = async () => {
   await loadData('ins-buy')
+  //data = mockData
   loadTable()
 }
 
