@@ -115,7 +115,7 @@ var charts = []
 var loadData = async (type) => {
 
   data = []
-  var baseUrl =  'http://deerpark-ecs-alb-1261413734.us-east-2.elb.amazonaws.com/api'
+  var baseUrl =  'https://deerpark-ecs-alb-1261413734.us-east-2.elb.amazonaws.com/api'
 
   try {
     const response = await axios.get(baseUrl + '/' + type)
