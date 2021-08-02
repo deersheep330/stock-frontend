@@ -2,8 +2,8 @@
   {
     "essential": true,
     "name": "stock-frontend-container",
-    "memory": 64,
-    "cpu": 128,
+    "memory": 128,
+    "cpu": 192,
     "image": "${image}",
     "portMappings": [
       { "containerPort": 80, "hostPort": 80 }
